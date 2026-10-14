@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Oasis Messenger Assistant</title>
+<meta name="description" content="Privacy policy for the Oasis Messenger Assistant Chrome extension.">
+<style>
+  :root { --bg:#fbfaf7; --text:#1f2523; --muted:#5b6662; --rule:#d9ddd8; --accent:#0e6f69; --soft:#f0eee8; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#161a19; --text:#e6e9e6; --muted:#9aa5a0; --rule:#2d3532; --accent:#5fc3ba; --soft:#1e2422; }
+  }
+  html { background: var(--bg); }
+  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:46rem; margin:0 auto; padding:2rem 16px 4rem; }
+  h1 { font-size:1.9rem; line-height:1.2; margin:0 0 1rem; text-wrap:balance; }
+  h2 { font-size:1.3rem; margin:2.2rem 0 .6rem; padding-top:.4rem; border-top:1px solid var(--rule); text-wrap:balance; }
+  h3 { font-size:1.05rem; margin:1.6rem 0 .4rem; }
+  p, li { max-width:68ch; }
+  li { margin:.35rem 0; }
+  a { color:var(--accent); }
+  code { background:var(--soft); padding:.1em .35em; border-radius:4px; font-size:.92em; }
+  table { border-collapse:collapse; display:block; overflow-x:auto; margin:1rem 0; font-size:.95rem; }
+  th, td { border:1px solid var(--rule); padding:.5rem .7rem; text-align:left; vertical-align:top; }
+  th { background:var(--soft); }
+  a:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+</style>
+</head>
+<body>
+<main>
+<h1>Privacy Policy — Oasis Messenger Assistant</h1>
+<p><strong>Applies to:</strong> version 0.2.0<br>
+<strong>Last updated:</strong> 14 October 2026<br>
+<strong>Publisher:</strong> Smail Moulouad<br>
+<strong>Contact:</strong> ismail.moulouad@gmail.com</p>
+<p>This policy describes how version 0.2.0 of the Oasis Messenger Assistant browser extension ("the
+extension") handles information, and lists every server the extension itself contacts.</p>
+<h2>The short version</h2>
+<ul>
+<li><strong>The publisher receives none of your data.</strong> The extension runs in your own Chrome browser. The
+  publisher runs no server for it and receives none of your data, your contacts' data, or usage
+  statistics from it. There is no analytics, advertising, tracking, or crash reporting in the
+  extension. (Google may show the publisher aggregate install counts on the Chrome Web Store, and the
+  publisher receives any email you send for support.)</li>
+<li><strong>It reads the open Messenger conversation automatically, inside your browser.</strong> Nothing leaves your
+  device until you click <strong>Generate suggested reply</strong> or <strong>Detect from conversation</strong>.</li>
+<li><strong>When you click Generate, information is sent to Featherless AI</strong>, a separate AI service you sign
+  up to yourself, using your own API key. That includes the messages of the open conversation (both
+  people's), the other person's name, and everything you have saved for replies: your notes about the
+  person, your personal note, your talking points, and the text of any documents you attached.
+  Email addresses and phone numbers in the conversation messages are replaced first, but that is
+  incomplete and covers only the messages.</li>
+<li><strong>The extension never sends a message for you.</strong> Clicking a suggestion types it into Messenger's
+  message box, replacing anything already there. You press Send yourself.</li>
+<li><strong>What you type into the extension is saved only in your browser, on your device.</strong> The extension
+  does not encrypt it.</li>
+</ul>
+<h2>What the extension is for</h2>
+<p>The extension is for people who use Messenger to talk with prospects and team members about a business
+opportunity (for example, direct-selling brand partners). It reads the conversation you have open and
+asks an AI model to draft suggested replies, including first messages to people you have not spoken to
+before. To tailor the drafts it uses the category you choose for the person (prospect, recruit,
+starter, leader or inactive), your notes about them, and a generation label (such as "Gen Z"). The AI
+also returns a short read of how receptive the person seems, which is shown in the panel and not
+saved. You review, edit and send every message yourself. That is the extension's only purpose.</p>
+<h2>What the extension reads on the page</h2>
+<p><strong>Where it runs.</strong> The extension is loaded when you open <code>messenger.com</code> or a <code>facebook.com/messages</code>
+page. It does not run on other websites and does not read your other browser tabs. Because Facebook
+changes pages without reloading them, if you move to another part of Facebook in the same tab
+without reloading, the extension can stay active in that tab until you reload it, and could read text
+from that page.</p>
+<p><strong>What it reads.</strong> Automatically, even when the side panel is closed, it reads:</p>
+<ul>
+<li>the text of the messages Messenger has loaded in the open conversation (not only the part on
+  screen), with no limit on how many, from every participant (in a group chat, everyone), and whether
+  each message was written by you, worked out from where it appears on screen or from Messenger's
+  hidden screen-reader text;</li>
+<li>any other text shown in the conversation area, such as link-preview text, the text of links, and
+  some date, time and status labels (the extension tries to skip these, but its filter misses some,
+  especially if Messenger is not set to English);</li>
+<li>a best guess at the other person's name from the top of the conversation. It fills in the "Contact's
+  name" field automatically. You can change it but cannot leave it empty, because an empty field is
+  filled in again.</li>
+</ul>
+<p>It does not read photos or the web addresses behind links.</p>
+<p><strong>When Messenger does not show recognisable messages</strong> (for example in a brand-new conversation, or
+after Messenger changes its layout), the extension can read other text on the screen instead, such as
+the names and message previews of your other chats in the left-hand list. If you then click Generate,
+that text is sent too. The Chat tab shows what was read, so check it before you click Generate.</p>
+<p><strong>Scrolling.</strong> When you click Generate, the extension scrolls the conversation to the top once, for up
+to about a second and a half, so Messenger loads earlier messages (that request is made by Messenger's
+own page), then scrolls back.</p>
+<p><strong>Typing into Messenger.</strong> When you click a suggestion, the extension deletes anything already in
+Messenger's message box (including a draft you had started) and types the suggestion in gradually, a
+character or two at a time at about the pace of a person typing, so a short reply takes a few seconds.
+Messenger may show the other person a "typing" indicator while this happens; that indicator comes from
+Messenger, not from the extension. The extension never presses Send, and it does not tell the other
+person that a reply was drafted with AI help; whether to tell them is up to you. For up to five minutes
+afterwards it checks, inside your browser, whether the message box has become empty (which usually
+means you sent or cleared it) to keep the counter on the toolbar icon. It does not store or send what
+is in the box.</p>
+<h2>Information you give the extension</h2>
+<p>All of this is optional except your API key and the contact category:</p>
+<ul>
+<li>your Featherless API key;</li>
+<li>your market (United Kingdom or Romania), which sets the panel language and the product catalog used;</li>
+<li>for each conversation: the category of person you are speaking with, free-text notes about them, how
+  you know them (including an optional free-text answer), their age if you type it, and the contact's
+  name (see above);</li>
+<li>reply language, emoji and short-message settings, and an optional "pivot to a new topic" note;</li>
+<li>a short personal note and talking points you want reflected in replies;</li>
+<li>up to two documents (PDF, Word, Excel, CSV, text or image files). They are converted to text inside
+  your browser; the file itself is not uploaded or kept, but the extracted text and file name are
+  saved and used in every reply;</li>
+<li>an optional product code.</li>
+</ul>
+<h2>What leaves your device, and where it goes</h2>
+<h3>1. Featherless AI (when you click Generate or Detect from conversation)</h3>
+<p>The extension sends a request over HTTPS from your browser to <code>api.featherless.ai</code>, authenticated with
+your own API key.</p>
+<p><strong>Generate suggested reply.</strong> The request contains:</p>
+<ul>
+<li>the messages read from the conversation, after the redaction described below;</li>
+<li>the other person's name, your notes about them, how you know them, their contact category, and a
+  generation label if one is set (your typed age is not sent, only the label);</li>
+<li>your language, market, emoji and short-message settings, and any pivot note;</li>
+<li>your personal note, talking points, and the extracted text and file names of any attached documents;</li>
+<li>product details and the product code, if you entered one (see section 2);</li>
+<li>the extension's built-in instructions and reference material, which contain no information about
+  you or your contacts.</li>
+</ul>
+<p>If you have not entered an age, the extension also scans the other person's messages for a stated age or
+generation (for example "I'm 34" or "millennial"). If it finds one, it adds the matching generation
+label to the request and saves that label for the conversation, without asking you.</p>
+<p>To get a reply, the extension tries up to three different AI models in turn, moving to the next if
+one fails or times out and retrying a model once if it reports being busy. A single click can
+therefore send the same request up to six times. Each attempt sends the same information to the same
+address.</p>
+<p><strong>Detect from conversation</strong> (Contact tab). The request contains your API key and the last six messages
+the extension has read, from both people, and is tried on up to three models in turn. <strong>This request
+does not apply the redaction below.</strong></p>
+<p><strong>Redaction.</strong> Before a Generate request, the extension replaces anything in the conversation messages
+that looks like an email address, or a phone-number-like run of seven or more digits (including dates,
+prices and order numbers written that way), with a placeholder such as "[redacted email]". This is a
+best-effort safeguard and is <strong>not complete</strong>. It does not remove names, street addresses, social-media
+handles, web links, numbers shorter than seven digits, or contact details that are spelled out or
+disguised, and it does not remove sensitive details a person writes in their own words. It also does
+not apply to anything you enter in the extension's own fields (notes, the "Other" answer to how you
+know someone, personal note, talking points, pivot note, product code, contact name) or to attached
+documents and their file names. Do not put sensitive information in those fields. When a Generate
+request succeeds and the redaction changed something, the panel shows a notice above the suggestions;
+if the request fails, no notice is shown.</p>
+<p><strong>Featherless.</strong> Featherless AI is a separate company and handles requests under its own terms, not
+this policy; see <a href="https://featherless.ai/privacy">https://featherless.ai/privacy</a>. Featherless also receives your IP address and the
+usual technical details of a web request, and can link requests to your Featherless account through
+your key. The publisher does not control Featherless, has no access to anything you send it, and cannot
+confirm where Featherless or the AI models it uses process data.</p>
+<h3>2. Product catalog lookup (only if you enter a product code)</h3>
+<p>If you type a product code into the optional product field and click Generate, the extension requests
+that product's details from an address on the <code>oriflame.com</code> domain (<code>we-test-api.oriflame.com</code>), which
+appears to be a test version of a product catalog. The request is an ordinary web request containing
+only the product code and a locale derived from your market setting (<code>en-GB</code> or <code>ro-RO</code>). It contains
+no conversation text, notes, login or API key. If the product is discontinued or out of stock, the
+response may name a replacement product, and the extension then requests up to two further products.
+That address receives your IP address and the usual technical details of a web request and handles
+them under its operator's own practices, not this policy. What it returns (name, availability,
+description, ingredients, benefits, how to use), or a note that the lookup failed, is included in the
+request to Featherless together with the product code. Because it appears to be a test service, its
+content may differ from what is on sale and it may change or disappear. If you leave the field empty,
+no such request is made.</p>
+<h3>3. Nothing else</h3>
+<p>In this version, the only servers the extension itself contacts are the two above. It sends nothing to
+the publisher. Messenger's own page makes its own requests as you use it (for example loading earlier
+messages when the extension scrolls, and handling text placed in the message box). All of the
+extension's code ships inside the extension package; it does not download or run code from the
+internet.</p>
+<h2>What is stored on your device</h2>
+<p>The extension saves the following in Chrome's extension storage on your computer. The extension does
+not sync it to your Google account and does not encrypt any of it; Chrome keeps it in your browser
+profile.</p>
+<table>
+<thead>
+<tr>
+<th>What</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Featherless API key</td>
+<td>Saved when you click Save key. Stored as plain text (the on-screen field is masked).</td>
+</tr>
+<tr>
+<td>Per-conversation records</td>
+<td>Contact category, notes, how you know them, the age you typed, and a generation label (derived from the age you typed, or saved automatically if the other person states their age or generation in the chat). Saved under the web address of that Messenger conversation, which can contain the other person's Messenger ID or username. <strong>Not deleted automatically.</strong></td>
+</tr>
+<tr>
+<td>Settings</td>
+<td>Market, emoji and short-message preferences.</td>
+</tr>
+<tr>
+<td>Personal note and talking points</td>
+<td>As you entered them.</td>
+</tr>
+<tr>
+<td>Attached documents</td>
+<td>The extracted text, file name and date added, for up to two files.</td>
+</tr>
+<tr>
+<td>Suggestions-waiting counter</td>
+<td>A number on the toolbar icon: suggestions typed into Messenger and not yet sent.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Not saved to disk:</strong> the text of the conversation, the suggestions the AI produces, the product code,
+and the name in the "Contact's name" field. The conversation text and the name read from the page are
+held in memory in your Messenger tab until you close or reload that tab. Suggestions and the product
+code exist only while the panel is open.</p>
+<p>If you used an earlier test version of this extension in the same browser profile, it may have left
+extra saved items. Uninstall and reinstall the extension to remove them.</p>
+<p><strong>Copy debug info.</strong> If you click this button (under "Debug info" on the Chat tab), the extension copies
+the conversation's web address (which can contain the other person's Messenger ID or username), the
+contact's name, some counts, and up to five labels read from the page (which can include names) to your
+clipboard. Check it before you share it with anyone. The extension does not store it.</p>
+<h2>Types of data handled</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>What</th>
+<th>Handling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Personal communications</td>
+<td>The Messenger conversation you open, both sides</td>
+<td>Read automatically; sent to Featherless on Generate and Detect; not saved</td>
+</tr>
+<tr>
+<td>Website content</td>
+<td>The contact's name and other on-page text that may be read with the conversation (chat-list previews, link-preview text)</td>
+<td>Same as above</td>
+</tr>
+<tr>
+<td>Personally identifiable information</td>
+<td>Contact names, your notes, how you know someone, age and generation label, document text and file names</td>
+<td>Saved on your device; sent to Featherless on Generate (the typed age itself is not sent)</td>
+</tr>
+<tr>
+<td>Authentication information</td>
+<td>Your Featherless API key</td>
+<td>Saved on your device; sent to Featherless with each request</td>
+</tr>
+</tbody>
+</table>
+<p>The extension does not collect location, financial or payment information, or browsing history. (The
+web address of each Messenger conversation you use is saved as a label for its records, as described
+above.)</p>
+<h2>How information is used</h2>
+<p>This extension's handling of user data adheres to the Chrome Web Store User Data Policy, including its
+Limited Use requirements. Information is used only to provide the extension's single purpose: drafting
+the reply suggestions you ask for. It is sent to Featherless AI (and, if you enter a product code, to
+the catalog address in section 2) only because that is necessary for that purpose. It is not sold or
+transferred to advertising platforms, data brokers or other information resellers; it is not used for
+personalised or interest-based advertising or to determine creditworthiness or for lending; and the
+publisher does not read it. It may be disclosed only where required by law or to protect against fraud or
+abuse.</p>
+<h2>Deleting your information</h2>
+<ul>
+<li>Notes, contact category, age and "how you know them" for a conversation are updated as you edit
+  them. Clearing them removes their content but leaves an empty record labelled with that
+  conversation's web address, and the extension has no button to delete those records. The generation label
+  is reset by typing an age and clearing it again.</li>
+<li>To change or remove your API key, personal note or talking points, edit or clear the field and click
+  its Save button.</li>
+<li>Use <strong>Remove</strong> next to an attached document to delete it.</li>
+<li>Removing the extension from Chrome normally also deletes everything in the table above; this is
+  done by the browser, not by the extension. It does not affect information already sent to
+  Featherless or the product catalog address, text you copied to your clipboard, or text left in
+  Messenger's message box.</li>
+<li>The publisher holds no copy of your information, so there is nothing for the publisher to delete.
+  For anything held by Featherless, contact Featherless.</li>
+</ul>
+<h2>Your rights</h2>
+<p>Everything the extension stores is on your device, where you can see, correct and delete it as
+described above. If you email the publisher for support, the publisher uses your email address and
+message only to reply to you and keeps them only as long as needed for that. You can also complain to
+your national data protection authority.</p>
+<h2>The people you talk to</h2>
+<p>The extension processes whatever appears in the conversations you choose, including messages written by
+other people, who have not agreed to anything and cannot see this policy. That can include sensitive
+details they write about themselves (for example about health or beliefs); these are sent to Featherless
+as part of the conversation and are not removed by the redaction. You decide which conversations to use
+the extension on. Use it only where you are comfortable sending that conversation to an AI service, make
+sure that is appropriate under the law and the terms of the services involved, and avoid typing sensitive
+details about people into the notes fields. The extension does not check anyone's age; do not use it for
+conversations with anyone under 18.</p>
+<h2>Who the extension is for</h2>
+<p>The extension is intended for adults. It is not directed at children.</p>
+<h2>Security</h2>
+<p>Requests to Featherless and to the product catalog address use HTTPS. Your API key, notes and document
+text are kept in Chrome's extension storage without extra encryption, so anyone with access to your
+computer and browser profile may be able to read them. If you think your API key has been exposed,
+replace it in your Featherless account.</p>
+<h2>Changes to this policy</h2>
+<p>If the extension's handling of information changes, this page will be updated and the "Last updated"
+date above will change. Changes that send information to a new destination will also be described on
+the extension's Chrome Web Store listing.</p>
+<h2>Trademarks</h2>
+<p>Facebook and Messenger are trademarks of Meta Platforms, Inc. This extension is unofficial and is not
+made or endorsed by Meta.</p>
+<h2>Contact</h2>
+<p>Questions about this policy: ismail.moulouad@gmail.com</p>
+</main>
+</body>
+</html>
