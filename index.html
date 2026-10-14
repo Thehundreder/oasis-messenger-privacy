@@ -44,6 +44,10 @@ extension") handles information, and lists every server the extension itself con
   publisher receives any email you send for support.)</li>
 <li><strong>It reads the open Messenger conversation automatically, inside your browser.</strong> Nothing leaves your
   device until you click <strong>Generate suggested reply</strong> or <strong>Detect from conversation</strong>.</li>
+<li><strong>The panel asks you to confirm before anything is sent.</strong> Until you confirm, the Chat tab shows a
+  notice explaining what gets sent. <strong>Generate suggested reply</strong> and <strong>Detect from conversation</strong> send
+  nothing until you click "I understand — continue"; after that you click them again. A link to this
+  policy sits in the notice, under the Generate button and in Settings.</li>
 <li><strong>When you click Generate, information is sent to Featherless AI</strong>, a separate AI service you sign
   up to yourself, using your own API key. That includes the messages of the open conversation (both
   people's), the other person's name, and everything you have saved for replies: your notes about the
@@ -64,11 +68,12 @@ starter, leader or inactive), your notes about them, and a generation label (suc
 also returns a short read of how receptive the person seems, which is shown in the panel and not
 saved. You review, edit and send every message yourself. That is the extension's only purpose.</p>
 <h2>What the extension reads on the page</h2>
-<p><strong>Where it runs.</strong> The extension is loaded when you open <code>messenger.com</code> or a <code>facebook.com/messages</code>
-page. It does not run on other websites and does not read your other browser tabs. Because Facebook
-changes pages without reloading them, if you move to another part of Facebook in the same tab
-without reloading, the extension can stay active in that tab until you reload it, and could read text
-from that page.</p>
+<p><strong>Where it runs.</strong> The extension is loaded when you open <code>www.messenger.com</code> or a
+<code>www.facebook.com/messages</code> page. It does not run on other websites and does not read your other
+browser tabs. Because Facebook changes pages without reloading them, the extension can stay loaded if
+you move to another part of Facebook in the same tab; it checks the page address first and, unless the
+tab is on Messenger or <code>www.facebook.com/messages</code>, reads no page text and types nothing (it still
+notices that the page changed, and does nothing with that).</p>
 <p><strong>What it reads.</strong> Automatically, even when the side panel is closed, it reads:</p>
 <ul>
 <li>the text of the messages Messenger has loaded in the open conversation (not only the part on
@@ -79,8 +84,8 @@ from that page.</p>
   some date, time and status labels (the extension tries to skip these, but its filter misses some,
   especially if Messenger is not set to English);</li>
 <li>a best guess at the other person's name from the top of the conversation. It fills in the "Contact's
-  name" field automatically. You can change it but cannot leave it empty, because an empty field is
-  filled in again.</li>
+  name" field automatically. You can change it; if the extension can find a name on the page, it fills
+  an empty field in again.</li>
 </ul>
 <p>It does not read photos or the web addresses behind links.</p>
 <p><strong>When Messenger does not show recognisable messages</strong> (for example in a brand-new conversation, or
@@ -207,6 +212,10 @@ profile.</p>
 <td>The extracted text, file name and date added, for up to two files.</td>
 </tr>
 <tr>
+<td>Notice confirmation</td>
+<td>The date of the data notice you confirmed (for example "2026-10-14"), so the notice is not shown again until it changes.</td>
+</tr>
+<tr>
 <td>Suggestions-waiting counter</td>
 <td>A number on the toolbar icon: suggestions typed into Messenger and not yet sent.</td>
 </tr>
@@ -217,7 +226,9 @@ and the name in the "Contact's name" field. The conversation text and the name r
 held in memory in your Messenger tab until you close or reload that tab. Suggestions and the product
 code exist only while the panel is open.</p>
 <p>If you used an earlier test version of this extension in the same browser profile, it may have left
-extra saved items. Uninstall and reinstall the extension to remove them.</p>
+extra saved items (for example a writing-style example). On startup the extension removes old connection
+settings for features that are switched off in this version; to remove everything else, uninstall and
+reinstall it.</p>
 <p><strong>Copy debug info.</strong> If you click this button (under "Debug info" on the Chat tab), the extension copies
 the conversation's web address (which can contain the other person's Messenger ID or username), the
 contact's name, some counts, and up to five labels read from the page (which can include names) to your
@@ -256,7 +267,9 @@ clipboard. Check it before you share it with anyone. The extension does not stor
 </table>
 <p>The extension does not collect location, financial or payment information, or browsing history. (The
 web address of each Messenger conversation you use is saved as a label for its records, as described
-above.)</p>
+above.)
+The extension does not look for health or other sensitive information, but because it sends the
+conversation text, anything a person writes in the conversation is included.</p>
 <h2>How information is used</h2>
 <p>This extension's handling of user data adheres to the Chrome Web Store User Data Policy, including its
 Limited Use requirements. Information is used only to provide the extension's single purpose: drafting
@@ -306,7 +319,7 @@ replace it in your Featherless account.</p>
 <h2>Changes to this policy</h2>
 <p>If the extension's handling of information changes, this page will be updated and the "Last updated"
 date above will change. Changes that send information to a new destination will also be described on
-the extension's Chrome Web Store listing.</p>
+the extension's Chrome Web Store listing, and the panel will show its notice again for you to confirm.</p>
 <h2>Trademarks</h2>
 <p>Facebook and Messenger are trademarks of Meta Platforms, Inc. This extension is unofficial and is not
 made or endorsed by Meta.</p>
