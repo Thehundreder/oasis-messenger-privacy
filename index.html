@@ -263,13 +263,22 @@ clipboard. Check it before you share it with anyone. The extension does not stor
 <td>Your Featherless API key</td>
 <td>Saved on your device; sent to Featherless with each request</td>
 </tr>
+<tr>
+<td>Health information</td>
+<td>Whatever a person writes in the conversation about their health or situation, and the AI's read of how receptive they seem</td>
+<td>Part of the conversation text: sent to Featherless on Generate and Detect; the read is shown in the panel and not saved</td>
+</tr>
+<tr>
+<td>Web history</td>
+<td>The web address of each Messenger conversation you use</td>
+<td>Saved on your device as a label for its records; copied only if you click Copy debug info; never sent anywhere</td>
+</tr>
 </tbody>
 </table>
-<p>The extension does not collect location, financial or payment information, or browsing history. (The
-web address of each Messenger conversation you use is saved as a label for its records, as described
-above.)
-The extension does not look for health or other sensitive information, but because it sends the
-conversation text, anything a person writes in the conversation is included.</p>
+<p>The extension does not collect location or financial or payment information. It does not look for health
+information, but the AI is asked to pick up on what the other person says about their situation and feelings
+(including money worries) and to rate how receptive they seem, and the conversation text you send may
+include anything a person writes, such as details about health or beliefs.</p>
 <h2>How information is used</h2>
 <p>This extension's handling of user data adheres to the Chrome Web Store User Data Policy, including its
 Limited Use requirements. Information is used only to provide the extension's single purpose: drafting
