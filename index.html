@@ -29,11 +29,11 @@
 <body>
 <main>
 <h1>Privacy Policy — Oasis Messenger Assistant</h1>
-<p><strong>Applies to:</strong> version 0.2.1<br>
-<strong>Last updated:</strong> 14 October 2026<br>
+<p><strong>Applies to:</strong> version 0.3.0<br>
+<strong>Last updated:</strong> 29 October 2026<br>
 <strong>Publisher:</strong> Smail Moulouad<br>
 <strong>Contact:</strong> ismail.moulouad@gmail.com</p>
-<p>This policy describes how version 0.2.1 of the Oasis Messenger Assistant browser extension ("the
+<p>This policy describes how version 0.3.0 of the Oasis Messenger Assistant browser extension ("the
 extension") handles information, and lists every server the extension itself contacts.</p>
 <h2>The short version</h2>
 <ul>
@@ -43,30 +43,44 @@ extension") handles information, and lists every server the extension itself con
   extension. (Google may show the publisher aggregate install counts on the Chrome Web Store, and the
   publisher receives any email you send for support.)</li>
 <li><strong>It reads the open Messenger conversation automatically, inside your browser.</strong> Nothing leaves your
-  device until you click <strong>Generate suggested reply</strong> or <strong>Detect from conversation</strong>.</li>
+  device until you click <strong>Generate suggested reply</strong>, <strong>Detect from conversation</strong> or <strong>Ask</strong>.</li>
 <li><strong>The panel asks you to confirm before anything is sent.</strong> Until you confirm, the Chat tab shows a
-  notice explaining what gets sent. <strong>Generate suggested reply</strong> and <strong>Detect from conversation</strong> send
-  nothing until you click "I understand — continue"; after that you click them again. A link to this
-  policy sits in the notice, under the Generate button and in Settings.</li>
+  notice explaining what gets sent. <strong>Generate suggested reply</strong>, <strong>Detect from conversation</strong> and
+  <strong>Ask</strong> send nothing until you click "I understand — continue"; after that you click them again. A
+  link to this policy sits in the notice, under the Generate button and in Settings.</li>
+<li><strong>The Ask tab answers your own questions</strong> about the company's products, ingredients and fees. Your
+  question goes to Featherless AI with the matching company information. The open Messenger
+  conversation goes with it only if you tick "Include this Messenger chat" for that question. To find
+  the company information, Ask reads public Oriflame web pages and its product catalog, and downloads
+  a public copy of the company knowledge base. It does this without your Oriflame login, and only after
+  you allow those sites in a Chrome prompt.</li>
 <li><strong>When you click Generate, information is sent to Featherless AI</strong>, a separate AI service you sign
   up to yourself, using your own API key. That includes the messages of the open conversation (both
   people's), the other person's name, and everything you have saved for replies: your notes about the
-  person, your personal note, your talking points, and the text of any documents you attached.
+  person, your personal note and your talking points.
   Email addresses and phone numbers in the conversation messages are replaced first, but that is
   incomplete and covers only the messages.</li>
+<li><strong>Generate also looks for products the other person mentions.</strong> It sends her last four messages
+  (redacted the same way) to Featherless AI in a separate short request, with the list of the
+  company's brand names, so it can recognise a product even when it is misspelt. Only the codes of the
+  products found are then checked on Oriflame's public product catalog (<code>api.oriflame.com</code>). The
+  product list itself ships inside the extension.</li>
 <li><strong>The extension never sends a message for you.</strong> Clicking a suggestion types it into Messenger's
   message box, replacing anything already there. You press Send yourself.</li>
-<li><strong>What you type into the extension is saved only in your browser, on your device.</strong> The extension
-  does not encrypt it.</li>
+<li><strong>What you type into the extension is saved only in your browser, on your device.</strong> Your API key
+  is stored encrypted; the rest is stored without encryption.</li>
 </ul>
 <h2>What the extension is for</h2>
 <p>The extension is for people who use Messenger to talk with prospects and team members about a business
 opportunity (for example, direct-selling brand partners). It reads the conversation you have open and
 asks an AI model to draft suggested replies, including first messages to people you have not spoken to
-before. To tailor the drafts it uses the category you choose for the person (prospect, recruit,
-starter, leader or inactive), your notes about them, and a generation label (such as "Gen Z"). The AI
+before. It drafts every reply as if the person is a prospect (someone you might invite to join, the
+only kind of contact the extension supports), and tailors the drafts with your notes about them and a generation label (such as "Gen Z"). The AI
 also returns a short read of how receptive the person seems, which is shown in the panel and not
-saved. You review, edit and send every message yourself. That is the extension's only purpose.</p>
+saved. The Ask tab answers your own questions about the company's products, ingredients and fees, so
+you can answer the people you talk to correctly. Each answer shows the company sources it came from.
+You review, edit and send every message yourself. Helping you with these Messenger conversations is
+the extension's only purpose.</p>
 <h2>What the extension reads on the page</h2>
 <p><strong>Where it runs.</strong> The extension is loaded when you open <code>www.messenger.com</code> or a
 <code>www.facebook.com/messages</code> page. It does not run on other websites and does not read your other
@@ -92,9 +106,9 @@ notices that the page changed, and does nothing with that).</p>
 after Messenger changes its layout), the extension can read other text on the screen instead, such as
 the names and message previews of your other chats in the left-hand list. If you then click Generate,
 that text is sent too. The Chat tab shows what was read, so check it before you click Generate.</p>
-<p><strong>Scrolling.</strong> When you click Generate, the extension scrolls the conversation to the top once, for up
-to about a second and a half, so Messenger loads earlier messages (that request is made by Messenger's
-own page), then scrolls back.</p>
+<p><strong>Scrolling.</strong> When you click Generate, or ask in the Ask tab with the chat included, the extension
+scrolls the conversation to the top twice, for up to about three seconds in all, so Messenger loads
+earlier messages (that request is made by Messenger's own page), then scrolls back.</p>
 <p><strong>Typing into Messenger.</strong> When you click a suggestion, the extension deletes anything already in
 Messenger's message box (including a draft you had started) and types the suggestion in gradually, a
 character or two at a time at about the pace of a person typing, so a short reply takes a few seconds.
@@ -105,18 +119,15 @@ afterwards it checks, inside your browser, whether the message box has become em
 means you sent or cleared it) to keep the counter on the toolbar icon. It does not store or send what
 is in the box.</p>
 <h2>Information you give the extension</h2>
-<p>All of this is optional except your API key and the contact category:</p>
+<p>All of this is optional except your API key:</p>
 <ul>
 <li>your Featherless API key;</li>
 <li>your market (United Kingdom or Romania), which sets the panel language and the product catalog used;</li>
-<li>for each conversation: the category of person you are speaking with, free-text notes about them, how
+<li>for each conversation: free-text notes about the person you are speaking with, how
   you know them (including an optional free-text answer), their age if you type it, and the contact's
   name (see above);</li>
 <li>reply language, emoji and short-message settings, and an optional "pivot to a new topic" note;</li>
 <li>a short personal note and talking points you want reflected in replies;</li>
-<li>up to two documents (PDF, Word, Excel, CSV, text or image files). They are converted to text inside
-  your browser; the file itself is not uploaded or kept, but the extracted text and file name are
-  saved and used in every reply;</li>
 <li>an optional product code.</li>
 </ul>
 <h2>What leaves your device, and where it goes</h2>
@@ -126,11 +137,15 @@ your own API key.</p>
 <p><strong>Generate suggested reply.</strong> The request contains:</p>
 <ul>
 <li>the messages read from the conversation, after the redaction described below;</li>
-<li>the other person's name, your notes about them, how you know them, their contact category, and a
+<li>the other person's name, your notes about them, how you know them, and a
   generation label if one is set (your typed age is not sent, only the label);</li>
 <li>your language, market, emoji and short-message settings, and any pivot note;</li>
-<li>your personal note, talking points, and the extracted text and file names of any attached documents;</li>
+<li>your personal note and talking points;</li>
 <li>product details and the product code, if you entered one (see section 2);</li>
+<li>the names of up to six products from one public product page of your market's site, if the other
+  person mentions a need such as dry skin and you have allowed the company sites in the Ask tab (see section 2);</li>
+<li>the names and short descriptions of real products the other person seems to mention, taken from the
+  product list inside the extension, if product search found any (see "Product search" below);</li>
 <li>the extension's built-in instructions and reference material, which contain no information about
   you or your contacts.</li>
 </ul>
@@ -141,18 +156,34 @@ label to the request and saves that label for the conversation, without asking y
 one fails or times out and retrying a model once if it reports being busy. A single click can
 therefore send the same request up to six times. Each attempt sends the same information to the same
 address.</p>
+<p><strong>Product search</strong> (added 2026-10-28). When you click Generate, and before the request above, the
+extension sends one more, separate short request to Featherless AI so it can recognise products the
+other person mentions, even misspelt or written in Romanian (for example "posses" for Possess). That
+request contains:</p>
+<ul>
+<li>the last four messages written by the other person (in a group chat, by the others), not yours, after
+  the redaction described below;</li>
+<li>the list of the company's brand names for your market (about 50), with a few example product names
+  for each, taken from the product list inside the extension;</li>
+<li>the extension's built-in instructions for this step.</li>
+</ul>
+<p>It is tried at most twice and stops after 8 seconds. If it fails, the extension looks for brand names in
+those messages on your device instead, without AI. The result is kept in the panel's memory, so clicking
+Generate again on the same conversation does not send this request again. If the other person has
+written nothing, or the product list for your market is missing, no such request is made. What the AI
+answers is only used to pick products from the product list inside the extension; their codes are then
+checked as described in section 2.</p>
 <p><strong>Detect from conversation</strong> (Contact tab). The request contains your API key and the last six messages
 the extension has read, from both people, and is tried on up to three models in turn. <strong>This request
 does not apply the redaction below.</strong></p>
-<p><strong>Redaction.</strong> Before a Generate request, the extension replaces anything in the conversation messages
+<p><strong>Redaction.</strong> Before a Generate request (the product-search request included), and before an Ask request that includes the chat, the extension replaces anything in the conversation messages
 that looks like an email address, or a phone-number-like run of seven or more digits (including dates,
 prices and order numbers written that way), with a placeholder such as "[redacted email]". This is a
 best-effort safeguard and is <strong>not complete</strong>. It does not remove names, street addresses, social-media
 handles, web links, numbers shorter than seven digits, or contact details that are spelled out or
 disguised, and it does not remove sensitive details a person writes in their own words. It also does
 not apply to anything you enter in the extension's own fields (notes, the "Other" answer to how you
-know someone, personal note, talking points, pivot note, product code, contact name) or to attached
-documents and their file names. Do not put sensitive information in those fields. When a Generate
+know someone, personal note, talking points, pivot note, product code, contact name). Do not put sensitive information in those fields. When a Generate
 request succeeds and the redaction changed something, the panel shows a notice above the suggestions;
 if the request fails, no notice is shown.</p>
 <p><strong>Featherless.</strong> Featherless AI is a separate company and handles requests under its own terms, not
@@ -160,29 +191,84 @@ this policy; see <a href="https://featherless.ai/privacy">https://featherless.ai
 usual technical details of a web request, and can link requests to your Featherless account through
 your key. The publisher does not control Featherless, has no access to anything you send it, and cannot
 confirm where Featherless or the AI models it uses process data.</p>
-<h3>2. Product catalog lookup (only if you enter a product code)</h3>
-<p>If you type a product code into the optional product field and click Generate, the extension requests
-that product's details from an address on the <code>oriflame.com</code> domain (<code>we-test-api.oriflame.com</code>), which
-appears to be a test version of a product catalog. The request is an ordinary web request containing
-only the product code and a locale derived from your market setting (<code>en-GB</code> or <code>ro-RO</code>). It contains
-no conversation text, notes, login or API key. If the product is discontinued or out of stock, the
-response may name a replacement product, and the extension then requests up to two further products.
-That address receives your IP address and the usual technical details of a web request and handles
-them under its operator's own practices, not this policy. What it returns (name, availability,
-description, ingredients, benefits, how to use), or a note that the lookup failed, is included in the
-request to Featherless together with the product code. Because it appears to be a test service, its
-content may differ from what is on sale and it may change or disappear. If you leave the field empty,
-no such request is made.</p>
-<h3>3. Nothing else</h3>
-<p>In this version, the only servers the extension itself contacts are the two above. It sends nothing to
-the publisher. Messenger's own page makes its own requests as you use it (for example loading earlier
+<h3>2. Oriflame's product catalog and product pages (when you click Generate)</h3>
+<p><strong>A product code you enter.</strong> If you type a product code into the optional product field and click
+Generate, the extension requests that product's details from Oriflame's public product catalog at
+<code>api.oriflame.com</code> (until 28 October 2026 this used a test version of the catalog). The request is an
+ordinary web request containing only the product code and a locale derived from your market setting
+(<code>en-GB</code> or <code>ro-RO</code>). It sends no cookies, does not say which page you came from, and contains no
+conversation text, notes, login or API key. A second request of the same kind then fetches the
+product's general details (name, description) by the product-family code the first answer gives, so a
+code for one shade or size also gets its product name. If the product is discontinued or
+out of stock, the response may name a replacement product, and the extension then requests up to two
+further products. That address receives your IP address and the usual technical details of a web
+request and handles them under its operator's own practices, not this policy. What it returns (name,
+availability, description, ingredients, benefits, how to use), or a note that the lookup failed, is
+included in the request to Featherless together with the product code. If you leave the field empty, no
+such request is made.</p>
+<p><strong>Products found by product search</strong> (added 2026-10-28). When product search (section 1) picks products
+from the product list inside the extension, the extension checks whether each one is still sold, with the
+same kind of request to <code>api.oriflame.com</code>: only the product code and the locale, no cookies, no
+referrer, no conversation text. At most three products are checked for each product the other person
+mentions. A product the catalog reports as discontinued is not suggested; if the check fails, or the
+catalog reports the product out of stock, the AI is told not to say the product is in stock.</p>
+<p><strong>The product list inside the extension.</strong> The list product search uses (product names, short public
+descriptions, categories, shades and sizes, and whether each is still sold; no prices) was built by the
+publisher from Oriflame's public product pages and ships inside the extension package. It is not
+downloaded while you use the extension and contains no information about you.</p>
+<p><strong>Products for a need the other person mentions</strong> (added 2026-10-27). If you have allowed the company
+sites in the Ask tab (section 3) and the other person's last four messages mention a need the extension
+recognises (for example dry skin), clicking Generate also reads one or two public product-category pages
+on your market's site (<code>uk.oriflame.com</code> or <code>ro.oriflame.com</code>), chosen from the site's own page list.
+The request is made the same way as Ask's: without your Oriflame login or cookies and without a referrer.
+The page address shows the need (for example a "hydrating" category); no conversation text is sent to
+the site. The names of up to six products listed on that page are included in the request to Featherless.
+If you have not allowed the sites, or no need is recognised, no such request is made.</p>
+<h3>3. The Ask tab (only when you use it)</h3>
+<p><strong>Allowing the sites.</strong> The first time you use Ask, the panel shows an <strong>Allow access</strong> button. Clicking
+it opens Chrome's own prompt for the public Oriflame site of your market (<code>uk.oriflame.com</code> or
+<code>ro.oriflame.com</code>) and the address of the knowledge-base copy
+(<code>metabloomglobal.blob.core.windows.net</code>). Until you allow them, Ask sends nothing anywhere. You can
+withdraw this at any time on the extension's page in Chrome (<code>chrome://extensions</code>).</p>
+<p><strong>Knowledge base.</strong> Ask downloads a public copy of the company knowledge base (questions and answers about
+the business) from <code>metabloomglobal.blob.core.windows.net</code>, a Microsoft Azure storage address that the
+publisher controls. Like any web server, it receives your IP address and the usual technical details of
+the request. It downloads only your market's language and English, at most once every
+six hours while the panel is open, and keeps the copy on your device (see "What is stored"). The
+request carries no information about you beyond the usual technical details of a web request.</p>
+<p><strong>When you click Ask</strong>, the extension:</p>
+<ul>
+<li>picks the matching parts of the knowledge base and of the reference material that ships inside the
+  extension, on your device;</li>
+<li>if your question contains product codes, requests those products' details (up to three, plus any
+  official replacement) from Oriflame's public product catalog at <code>api.oriflame.com</code>. The request contains
+  only the product code and your market's language;</li>
+<li>if needed, reads up to a few public pages of your market's Oriflame site (for example the membership
+  and fee pages, or the shop pages for a need). Only pages the extension lists for your market can be
+  read. These requests are made <strong>without your Oriflame login</strong> (no cookies) and
+  without telling the site which page you came from;</li>
+<li>sends a request to Featherless AI (<code>api.featherless.ai</code>) with your API key. It contains your question
+  (up to 1,000 characters); your previous three questions and the extension's answers in this panel
+  session (each answer shortened to 600 characters); the company information picked above; the Messenger
+  conversation you have open, but only if you ticked "Include this Messenger chat in my question" for that
+  question (up to its last 8,000 characters, after the redaction described in section 1); and the
+  extension's built-in instructions. One click makes at most two such requests, tried on up to three AI
+  models with at most six attempts in total. <strong>The redaction does not apply to the question you type</strong>,
+  so do not type personal details into a question. When the redaction changed something in the chat, the
+  answer shows a notice.</li>
+</ul>
+<p>Ask never sends your notes, personal note or talking points.</p>
+<h3>4. Nothing else</h3>
+<p>In this version, the only servers the extension itself contacts are the ones above. It sends nothing to
+the publisher. The product list used by product search ships inside the extension and is not
+downloaded. Messenger's own page makes its own requests as you use it (for example loading earlier
 messages when the extension scrolls, and handling text placed in the message box). All of the
 extension's code ships inside the extension package; it does not download or run code from the
 internet.</p>
 <h2>What is stored on your device</h2>
 <p>The extension saves the following in Chrome's extension storage on your computer. The extension does
-not sync it to your Google account and does not encrypt any of it; Chrome keeps it in your browser
-profile.</p>
+not sync it to your Google account. Your API key is stored encrypted; everything else is stored without
+encryption. Chrome keeps it in your browser profile.</p>
 <table>
 <thead>
 <tr>
@@ -193,11 +279,15 @@ profile.</p>
 <tbody>
 <tr>
 <td>Featherless API key</td>
-<td>Saved when you click Save key. Stored as plain text (the on-screen field is masked).</td>
+<td>Saved when you click Save key. Stored encrypted (AES-GCM); the on-screen field is masked. A key saved by version 0.2.1 or earlier is encrypted automatically the first time you open the panel.</td>
+</tr>
+<tr>
+<td>Encryption key for the API key</td>
+<td>Created by the extension on your device the first time you save your API key, and kept in the extension's own browser storage, in the same Chrome profile. It is used only to encrypt and decrypt your API key.</td>
 </tr>
 <tr>
 <td>Per-conversation records</td>
-<td>Contact category, notes, how you know them, the age you typed, and a generation label (derived from the age you typed, or saved automatically if the other person states their age or generation in the chat). Saved under the web address of that Messenger conversation, which can contain the other person's Messenger ID or username. <strong>Not deleted automatically.</strong></td>
+<td>Notes, how you know them, the age you typed, and a generation label (derived from the age you typed, or saved automatically if the other person states their age or generation in the chat). Saved under the web address of that Messenger conversation, which can contain the other person's Messenger ID or username. <strong>Not deleted automatically.</strong></td>
 </tr>
 <tr>
 <td>Settings</td>
@@ -208,16 +298,16 @@ profile.</p>
 <td>As you entered them.</td>
 </tr>
 <tr>
-<td>Attached documents</td>
-<td>The extracted text, file name and date added, for up to two files.</td>
+<td>Notice confirmation</td>
+<td>The date of the data notice you confirmed (for example "2026-10-22"), so the notice is not shown again until it changes.</td>
 </tr>
 <tr>
-<td>Notice confirmation</td>
-<td>The date of the data notice you confirmed (for example "2026-10-14"), so the notice is not shown again until it changes.</td>
+<td>Knowledge-base copy (Ask)</td>
+<td>The public company knowledge base for your market's language and English, its version and date, and when it was last checked. It contains no information about you.</td>
 </tr>
 <tr>
 <td>Pilot feedback</td>
-<td>Counts only: replies generated, suggestions used, and your Useful yes/no answers, plus the date counting started. No message text.</td>
+<td>Counts only: replies generated, suggestions used, questions answered in Ask, and your Useful yes/no answers, plus the date counting started. No message text and no questions. Stays on your device; it leaves only if you click Copy summary and send it yourself.</td>
 </tr>
 <tr>
 <td>Suggestions-waiting counter</td>
@@ -228,9 +318,12 @@ profile.</p>
 <p><strong>Not saved to disk:</strong> the text of the conversation, the suggestions the AI produces, the product code,
 and the name in the "Contact's name" field. The conversation text and the name read from the page are
 held in memory in your Messenger tab until you close or reload that tab. Suggestions and the product
-code exist only while the panel is open.</p>
+code exist only while the panel is open, and so do the products product search found (kept for up to
+20 conversations so Generate does not ask again). Your Ask questions and their answers are also not saved. They
+stay in the panel until you click <strong>Clear chat</strong> or close the panel.</p>
 <p>If you used an earlier test version of this extension in the same browser profile, it may have left
-extra saved items (for example a writing-style example). On startup the extension removes old connection
+extra saved items (for example a writing-style example, or the text of reference documents you attached
+in an earlier version). On startup the extension removes old connection
 settings for features that are switched off in this version; to remove everything else, uninstall and
 reinstall it.</p>
 <p><strong>Copy debug info.</strong> If you click this button (under "Debug info" on the Chat tab), the extension copies
@@ -249,8 +342,8 @@ clipboard. Check it before you share it with anyone. The extension does not stor
 <tbody>
 <tr>
 <td>Personal communications</td>
-<td>The Messenger conversation you open, both sides</td>
-<td>Read automatically; sent to Featherless on Generate and Detect; not saved</td>
+<td>The Messenger conversation you open, both sides; the questions you type into Ask and their answers</td>
+<td>Conversation: read automatically; sent to Featherless on Generate (the other person's last four messages also in the separate product-search request) and Detect, and on Ask only when you tick "Include this Messenger chat"; not saved. Ask questions: sent to Featherless when you click Ask; kept in the panel until you clear or close it; not saved</td>
 </tr>
 <tr>
 <td>Website content</td>
@@ -259,13 +352,13 @@ clipboard. Check it before you share it with anyone. The extension does not stor
 </tr>
 <tr>
 <td>Personally identifiable information</td>
-<td>Contact names, your notes, how you know someone, age and generation label, document text and file names</td>
+<td>Contact names, your notes, how you know someone, age and generation label</td>
 <td>Saved on your device; sent to Featherless on Generate (the typed age itself is not sent)</td>
 </tr>
 <tr>
 <td>Authentication information</td>
 <td>Your Featherless API key</td>
-<td>Saved on your device; sent to Featherless with each request</td>
+<td>Saved on your device, encrypted; sent to Featherless with each request</td>
 </tr>
 <tr>
 <td>Health information</td>
@@ -279,7 +372,7 @@ clipboard. Check it before you share it with anyone. The extension does not stor
 </tr>
 <tr>
 <td>User activity</td>
-<td>Counts of your own use of the extension (replies generated, suggestions used, Useful yes/no)</td>
+<td>Counts of your own use of the extension (replies generated, suggestions used, questions answered, Useful yes/no)</td>
 <td>Saved on your device; it leaves only if you copy the summary and send it yourself</td>
 </tr>
 </tbody>
@@ -290,22 +383,27 @@ information, but the AI is asked to pick up on what the other person says about 
 include anything a person writes, such as details about health or beliefs.</p>
 <h2>How information is used</h2>
 <p>This extension's handling of user data adheres to the Chrome Web Store User Data Policy, including its
-Limited Use requirements. Information is used only to provide the extension's single purpose: drafting
-the reply suggestions you ask for. It is sent to Featherless AI (and, if you enter a product code, to
-the catalog address in section 2) only because that is necessary for that purpose. It is not sold or
+Limited Use requirements. Information is used only to provide the extension's single purpose: helping
+you with your Messenger conversations, by drafting the reply suggestions you ask for and answering your
+questions about the company's products. It is sent to Featherless AI (and, for product codes only, to the
+catalog address in sections 2 and 3) only because that is necessary for that purpose. It is not sold or
 transferred to advertising platforms, data brokers or other information resellers; it is not used for
 personalised or interest-based advertising or to determine creditworthiness or for lending; and the
 publisher does not read it. It may be disclosed only where required by law or to protect against fraud or
 abuse.</p>
 <h2>Deleting your information</h2>
 <ul>
-<li>Notes, contact category, age and "how you know them" for a conversation are updated as you edit
+<li>Notes, age and "how you know them" for a conversation are updated as you edit
   them. Clearing them removes their content but leaves an empty record labelled with that
   conversation's web address, and the extension has no button to delete those records. The generation label
   is reset by typing an age and clearing it again.</li>
+<li>Earlier versions saved a contact category (prospect, recruit, starter, leader or inactive) for each
+  conversation. Version 0.3.0 no longer asks for one and deletes those saved categories the first
+  time its side panel opens.</li>
 <li>To change or remove your API key, personal note or talking points, edit or clear the field and click
-  its Save button.</li>
-<li>Use <strong>Remove</strong> next to an attached document to delete it.</li>
+  its Save button. Chrome may keep deleted values in its files for a while before overwriting them,
+  and version 0.2.1 or earlier stored the API key unencrypted, so revoke a key in your Featherless
+  account if you want to be sure an old copy can't be used.</li>
 <li>Removing the extension from Chrome normally also deletes everything in the table above; this is
   done by the browser, not by the extension. It does not affect information already sent to
   Featherless or the product catalog address, text you copied to your clipboard, or text left in
@@ -330,10 +428,14 @@ conversations with anyone under 18.</p>
 <h2>Who the extension is for</h2>
 <p>The extension is intended for adults. It is not directed at children.</p>
 <h2>Security</h2>
-<p>Requests to Featherless and to the product catalog address use HTTPS. Your API key, notes and document
-text are kept in Chrome's extension storage without extra encryption, so anyone with access to your
+<p>Requests to Featherless, the product catalog addresses, the Oriflame pages and the knowledge-base copy
+use HTTPS. Content downloaded for Ask is treated as text and is never run as code. Your API key is stored encrypted,
+so it does not appear in readable form in the extension's settings storage. The encryption key is kept in
+the same Chrome profile, though, so someone with a full copy of your browser profile (or a backup of it),
+or malicious software running on your computer, could still recover your API key. Your notes are kept in Chrome's extension storage without extra encryption, so anyone with access to your
 computer and browser profile may be able to read them. If you think your API key has been exposed,
-replace it in your Featherless account.</p>
+revoke it and create a new one in your Featherless account; that is the only way to make an old copy
+useless.</p>
 <h2>Changes to this policy</h2>
 <p>If the extension's handling of information changes, this page will be updated and the "Last updated"
 date above will change. Changes that send information to a new destination will also be described on
