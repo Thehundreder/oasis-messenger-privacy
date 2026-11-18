@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy Policy — Oasis Messenger Assistant</title>
-<meta name="description" content="Privacy policy for the Oasis Messenger Assistant Chrome extension.">
+<title>Privacy Policy — Oasis Chat Assistant</title>
+<meta name="description" content="Privacy policy for the Oasis Chat Assistant Chrome extension.">
 <style>
   :root { --bg:#fbfaf7; --text:#1f2523; --muted:#5b6662; --rule:#d9ddd8; --accent:#0e6f69; --soft:#f0eee8; }
   @media (prefers-color-scheme: dark) {
@@ -28,12 +28,12 @@
 </head>
 <body>
 <main>
-<h1>Privacy Policy — Oasis Messenger Assistant</h1>
-<p><strong>Applies to:</strong> version 0.3.0<br>
-<strong>Last updated:</strong> 29 October 2026<br>
+<h1>Privacy Policy — Oasis Chat Assistant</h1>
+<p><strong>Applies to:</strong> version 0.4.0<br>
+<strong>Last updated:</strong> 9 November 2026<br>
 <strong>Publisher:</strong> Smail Moulouad<br>
 <strong>Contact:</strong> ismail.moulouad@gmail.com</p>
-<p>This policy describes how version 0.3.0 of the Oasis Messenger Assistant browser extension ("the
+<p>This policy describes how version 0.4.0 of the Oasis Chat Assistant browser extension ("the
 extension") handles information, and lists every server the extension itself contacts.</p>
 <h2>The short version</h2>
 <ul>
@@ -42,36 +42,37 @@ extension") handles information, and lists every server the extension itself con
   statistics from it. There is no analytics, advertising, tracking, or crash reporting in the
   extension. (Google may show the publisher aggregate install counts on the Chrome Web Store, and the
   publisher receives any email you send for support.)</li>
-<li><strong>It reads the open Messenger conversation automatically, inside your browser.</strong> Nothing leaves your
+<li><strong>It reads the open Messenger or Instagram conversation automatically, inside your browser.</strong> Nothing leaves your
   device until you click <strong>Generate suggested reply</strong>, <strong>Detect from conversation</strong> or <strong>Ask</strong>.</li>
 <li><strong>The panel asks you to confirm before anything is sent.</strong> Until you confirm, the Chat tab shows a
   notice explaining what gets sent. <strong>Generate suggested reply</strong>, <strong>Detect from conversation</strong> and
   <strong>Ask</strong> send nothing until you click "I understand — continue"; after that you click them again. A
   link to this policy sits in the notice, under the Generate button and in Settings.</li>
 <li><strong>The Ask tab answers your own questions</strong> about the company's products, ingredients and fees. Your
-  question goes to Featherless AI with the matching company information. The open Messenger
-  conversation goes with it only if you tick "Include this Messenger chat" for that question. To find
+  question goes to OpenRouter with the matching company information. The open
+  conversation goes with it only if you tick "Include this chat in my question" for that question. To find
   the company information, Ask reads public Oriflame web pages and its product catalog, and downloads
   a public copy of the company knowledge base. It does this without your Oriflame login, and only after
   you allow those sites in a Chrome prompt.</li>
-<li><strong>When you click Generate, information is sent to Featherless AI</strong>, a separate AI service you sign
-  up to yourself, using your own API key. That includes the messages of the open conversation (both
+<li><strong>When you click Generate, information is sent to OpenRouter</strong>, a separate AI service you sign up
+  to yourself and pay per use, using your own API key. OpenRouter passes it on to the company that runs
+  the AI model. That includes the messages of the open conversation (both
   people's), the other person's name, and everything you have saved for replies: your notes about the
   person, your personal note and your talking points.
   Email addresses and phone numbers in the conversation messages are replaced first, but that is
   incomplete and covers only the messages.</li>
 <li><strong>Generate also looks for products the other person mentions.</strong> It sends her last four messages
-  (redacted the same way) to Featherless AI in a separate short request, with the list of the
+  (redacted the same way) to OpenRouter in a separate short request, with the list of the
   company's brand names, so it can recognise a product even when it is misspelt. Only the codes of the
   products found are then checked on Oriflame's public product catalog (<code>api.oriflame.com</code>). The
   product list itself ships inside the extension.</li>
-<li><strong>The extension never sends a message for you.</strong> Clicking a suggestion types it into Messenger's
+<li><strong>The extension never sends a message for you.</strong> Clicking a suggestion puts it into the open chat's
   message box, replacing anything already there. You press Send yourself.</li>
 <li><strong>What you type into the extension is saved only in your browser, on your device.</strong> Your API key
   is stored encrypted; the rest is stored without encryption.</li>
 </ul>
 <h2>What the extension is for</h2>
-<p>The extension is for people who use Messenger to talk with prospects and team members about a business
+<p>The extension is for people who use Messenger or Instagram to talk with prospects and team members about a business
 opportunity (for example, direct-selling brand partners). It reads the conversation you have open and
 asks an AI model to draft suggested replies, including first messages to people you have not spoken to
 before. It drafts every reply as if the person is a prospect (someone you might invite to join, the
@@ -79,7 +80,7 @@ only kind of contact the extension supports), and tailors the drafts with your n
 also returns a short read of how receptive the person seems, which is shown in the panel and not
 saved. The Ask tab answers your own questions about the company's products, ingredients and fees, so
 you can answer the people you talk to correctly. Each answer shows the company sources it came from.
-You review, edit and send every message yourself. Helping you with these Messenger conversations is
+You review, edit and send every message yourself. Helping you with these conversations is
 the extension's only purpose.</p>
 <h2>What the extension reads on the page</h2>
 <p><strong>Where it runs.</strong> The extension is loaded when you open <code>www.messenger.com</code> or a
@@ -88,6 +89,10 @@ browser tabs. Because Facebook changes pages without reloading them, the extensi
 you move to another part of Facebook in the same tab; it checks the page address first and, unless the
 tab is on Messenger or <code>www.facebook.com/messages</code>, reads no page text and types nothing (it still
 notices that the page changed, and does nothing with that).</p>
+<p><strong>On Instagram</strong>, the extension is loaded when you open a <code>www.instagram.com/direct</code> page. There it
+reads only a conversation you have open (<code>www.instagram.com/direct/t/…</code>), never your inbox list, feed,
+profiles or stories. If you open your messages from another part of Instagram without the page reloading,
+the extension asks you to reload the page first.</p>
 <p><strong>What it reads.</strong> Automatically, even when the side panel is closed, it reads:</p>
 <ul>
 <li>the text of the messages Messenger has loaded in the open conversation (not only the part on
@@ -102,13 +107,22 @@ notices that the page changed, and does nothing with that).</p>
   an empty field in again.</li>
 </ul>
 <p>It does not read photos or the web addresses behind links.</p>
+<p><strong>On Instagram it reads</strong> the text of the messages Instagram has loaded in the open conversation, from every
+participant, and whether each message was written by you, worked out from Instagram's hidden button labels or
+from where it appears on screen. Instagram only keeps nearby messages on the page, so the extension also keeps
+what it has already read of this conversation in that tab's memory, until you open another conversation or
+reload the page. It also reads the other person's display name from the top of the conversation, and their
+username, which is used only inside the page to tell their messages from yours and is not sent anywhere. When
+they share a post, reel or story, only the fact that they shared one is kept, not the account it came from. If
+Instagram does not show recognisable messages, the extension reads nothing rather than other text on the screen.</p>
 <p><strong>When Messenger does not show recognisable messages</strong> (for example in a brand-new conversation, or
 after Messenger changes its layout), the extension can read other text on the screen instead, such as
 the names and message previews of your other chats in the left-hand list. If you then click Generate,
 that text is sent too. The Chat tab shows what was read, so check it before you click Generate.</p>
 <p><strong>Scrolling.</strong> When you click Generate, or ask in the Ask tab with the chat included, the extension
 scrolls the conversation to the top twice, for up to about three seconds in all, so Messenger loads
-earlier messages (that request is made by Messenger's own page), then scrolls back.</p>
+earlier messages (that request is made by Messenger's own page), then scrolls back. On Instagram it moves
+up one screen at a time, twice, for up to about three seconds in all, then moves back.</p>
 <p><strong>Typing into Messenger.</strong> When you click a suggestion, the extension deletes anything already in
 Messenger's message box (including a draft you had started) and types the suggestion in gradually, a
 character or two at a time at about the pace of a person typing, so a short reply takes a few seconds.
@@ -118,10 +132,15 @@ person that a reply was drafted with AI help; whether to tell them is up to you.
 afterwards it checks, inside your browser, whether the message box has become empty (which usually
 means you sent or cleared it) to keep the counter on the toolbar icon. It does not store or send what
 is in the box.</p>
+<p><strong>Typing into Instagram.</strong> When you click a suggestion on Instagram, the extension clears the message box
+(including a draft you had started) and types the suggestion in gradually, at the same pace as on Messenger, with any
+line breaks replaced by spaces. If it can't clear the box, it tells you. Instagram may show the other person a "typing"
+indicator; that would come from Instagram, not from the extension. The rest of the paragraph above applies in the same
+way: the extension never presses Send, and whether to say a reply was drafted with AI help is up to you.</p>
 <h2>Information you give the extension</h2>
 <p>All of this is optional except your API key:</p>
 <ul>
-<li>your Featherless API key;</li>
+<li>your OpenRouter API key;</li>
 <li>your market (United Kingdom or Romania), which sets the panel language and the product catalog used;</li>
 <li>for each conversation: free-text notes about the person you are speaking with, how
   you know them (including an optional free-text answer), their age if you type it, and the contact's
@@ -131,9 +150,10 @@ is in the box.</p>
 <li>an optional product code.</li>
 </ul>
 <h2>What leaves your device, and where it goes</h2>
-<h3>1. Featherless AI (when you click Generate or Detect from conversation)</h3>
-<p>The extension sends a request over HTTPS from your browser to <code>api.featherless.ai</code>, authenticated with
-your own API key.</p>
+<h3>1. OpenRouter (when you click Generate or Detect from conversation)</h3>
+<p>The extension sends a request over HTTPS from your browser to <code>openrouter.ai</code>, authenticated with
+your own API key. OpenRouter forwards it to the company that runs the AI model (see "OpenRouter"
+below).</p>
 <p><strong>Generate suggested reply.</strong> The request contains:</p>
 <ul>
 <li>the messages read from the conversation, after the redaction described below;</li>
@@ -157,7 +177,7 @@ one fails or times out and retrying a model once if it reports being busy. A sin
 therefore send the same request up to six times. Each attempt sends the same information to the same
 address.</p>
 <p><strong>Product search</strong> (added 2026-10-28). When you click Generate, and before the request above, the
-extension sends one more, separate short request to Featherless AI so it can recognise products the
+extension sends one more, separate short request to OpenRouter so it can recognise products the
 other person mentions, even misspelt or written in Romanian (for example "posses" for Possess). That
 request contains:</p>
 <ul>
@@ -186,11 +206,18 @@ not apply to anything you enter in the extension's own fields (notes, the "Other
 know someone, personal note, talking points, pivot note, product code, contact name). Do not put sensitive information in those fields. When a Generate
 request succeeds and the redaction changed something, the panel shows a notice above the suggestions;
 if the request fails, no notice is shown.</p>
-<p><strong>Featherless.</strong> Featherless AI is a separate company and handles requests under its own terms, not
-this policy; see <a href="https://featherless.ai/privacy">https://featherless.ai/privacy</a>. Featherless also receives your IP address and the
-usual technical details of a web request, and can link requests to your Featherless account through
-your key. The publisher does not control Featherless, has no access to anything you send it, and cannot
-confirm where Featherless or the AI models it uses process data.</p>
+<p><strong>OpenRouter.</strong> OpenRouter is a separate company and handles requests under its own terms, not this
+policy; see <a href="https://openrouter.ai/privacy">https://openrouter.ai/privacy</a> and <a href="https://openrouter.ai/terms">https://openrouter.ai/terms</a>. OpenRouter does not run
+the AI models itself: it passes each request on to the company that runs the chosen model (for example
+Microsoft Azure for OpenAI's model, Google, or a company hosting DeepSeek's model). The extension asks
+OpenRouter to use only endpoints that do not keep requests after answering (zero data retention) and
+do not train AI on them; the publisher relies on OpenRouter's description of those policies and cannot
+check them. OpenRouter also receives your IP address and the usual technical details of a web request,
+and can link requests to your OpenRouter account through your key. Each request carries a random
+identifier, created when the panel opens and never stored, so that OpenRouter sends requests to the
+same company and part of the prompt can be reused. It says nothing about you or the other person. The
+publisher does not control OpenRouter or those companies, has no access to anything you send, and
+cannot confirm where they process data.</p>
 <h3>2. Oriflame's product catalog and product pages (when you click Generate)</h3>
 <p><strong>A product code you enter.</strong> If you type a product code into the optional product field and click
 Generate, the extension requests that product's details from Oriflame's public product catalog at
@@ -204,7 +231,7 @@ out of stock, the response may name a replacement product, and the extension the
 further products. That address receives your IP address and the usual technical details of a web
 request and handles them under its operator's own practices, not this policy. What it returns (name,
 availability, description, ingredients, benefits, how to use), or a note that the lookup failed, is
-included in the request to Featherless together with the product code. If you leave the field empty, no
+included in the request to OpenRouter together with the product code. If you leave the field empty, no
 such request is made.</p>
 <p><strong>Products found by product search</strong> (added 2026-10-28). When product search (section 1) picks products
 from the product list inside the extension, the extension checks whether each one is still sold, with the
@@ -222,7 +249,7 @@ recognises (for example dry skin), clicking Generate also reads one or two publi
 on your market's site (<code>uk.oriflame.com</code> or <code>ro.oriflame.com</code>), chosen from the site's own page list.
 The request is made the same way as Ask's: without your Oriflame login or cookies and without a referrer.
 The page address shows the need (for example a "hydrating" category); no conversation text is sent to
-the site. The names of up to six products listed on that page are included in the request to Featherless.
+the site. The names of up to six products listed on that page are included in the request to OpenRouter.
 If you have not allowed the sites, or no need is recognised, no such request is made.</p>
 <h3>3. The Ask tab (only when you use it)</h3>
 <p><strong>Allowing the sites.</strong> The first time you use Ask, the panel shows an <strong>Allow access</strong> button. Clicking
@@ -247,10 +274,10 @@ request carries no information about you beyond the usual technical details of a
   and fee pages, or the shop pages for a need). Only pages the extension lists for your market can be
   read. These requests are made <strong>without your Oriflame login</strong> (no cookies) and
   without telling the site which page you came from;</li>
-<li>sends a request to Featherless AI (<code>api.featherless.ai</code>) with your API key. It contains your question
+<li>sends a request to OpenRouter (<code>openrouter.ai</code>) with your API key. It contains your question
   (up to 1,000 characters); your previous three questions and the extension's answers in this panel
-  session (each answer shortened to 600 characters); the company information picked above; the Messenger
-  conversation you have open, but only if you ticked "Include this Messenger chat in my question" for that
+  session (each answer shortened to 600 characters); the company information picked above; the
+  conversation you have open, but only if you ticked "Include this chat in my question" for that
   question (up to its last 8,000 characters, after the redaction described in section 1); and the
   extension's built-in instructions. One click makes at most two such requests, tried on up to three AI
   models with at most six attempts in total. <strong>The redaction does not apply to the question you type</strong>,
@@ -261,7 +288,7 @@ request carries no information about you beyond the usual technical details of a
 <h3>4. Nothing else</h3>
 <p>In this version, the only servers the extension itself contacts are the ones above. It sends nothing to
 the publisher. The product list used by product search ships inside the extension and is not
-downloaded. Messenger's own page makes its own requests as you use it (for example loading earlier
+downloaded. Messenger's or Instagram's own page makes its own requests as you use it (for example loading earlier
 messages when the extension scrolls, and handling text placed in the message box). All of the
 extension's code ships inside the extension package; it does not download or run code from the
 internet.</p>
@@ -278,7 +305,7 @@ encryption. Chrome keeps it in your browser profile.</p>
 </thead>
 <tbody>
 <tr>
-<td>Featherless API key</td>
+<td>OpenRouter API key</td>
 <td>Saved when you click Save key. Stored encrypted (AES-GCM); the on-screen field is masked. A key saved by version 0.2.1 or earlier is encrypted automatically the first time you open the panel.</td>
 </tr>
 <tr>
@@ -311,13 +338,13 @@ encryption. Chrome keeps it in your browser profile.</p>
 </tr>
 <tr>
 <td>Suggestions-waiting counter</td>
-<td>A number on the toolbar icon: suggestions typed into Messenger and not yet sent.</td>
+<td>A number on the toolbar icon: suggestions put into a chat and not yet sent.</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Not saved to disk:</strong> the text of the conversation, the suggestions the AI produces, the product code,
 and the name in the "Contact's name" field. The conversation text and the name read from the page are
-held in memory in your Messenger tab until you close or reload that tab. Suggestions and the product
+held in memory in your Messenger or Instagram tab until you close or reload that tab. Suggestions and the product
 code exist only while the panel is open, and so do the products product search found (kept for up to
 20 conversations so Generate does not ask again). Your Ask questions and their answers are also not saved. They
 stay in the panel until you click <strong>Clear chat</strong> or close the panel.</p>
@@ -342,8 +369,8 @@ clipboard. Check it before you share it with anyone. The extension does not stor
 <tbody>
 <tr>
 <td>Personal communications</td>
-<td>The Messenger conversation you open, both sides; the questions you type into Ask and their answers</td>
-<td>Conversation: read automatically; sent to Featherless on Generate (the other person's last four messages also in the separate product-search request) and Detect, and on Ask only when you tick "Include this Messenger chat"; not saved. Ask questions: sent to Featherless when you click Ask; kept in the panel until you clear or close it; not saved</td>
+<td>The Messenger or Instagram conversation you open, both sides; the questions you type into Ask and their answers</td>
+<td>Conversation: read automatically; sent to OpenRouter on Generate (the other person's last four messages also in the separate product-search request) and Detect, and on Ask only when you tick "Include this Messenger chat"; not saved. Ask questions: sent to OpenRouter when you click Ask; kept in the panel until you clear or close it; not saved</td>
 </tr>
 <tr>
 <td>Website content</td>
@@ -353,21 +380,21 @@ clipboard. Check it before you share it with anyone. The extension does not stor
 <tr>
 <td>Personally identifiable information</td>
 <td>Contact names, your notes, how you know someone, age and generation label</td>
-<td>Saved on your device; sent to Featherless on Generate (the typed age itself is not sent)</td>
+<td>Saved on your device; sent to OpenRouter on Generate (the typed age itself is not sent)</td>
 </tr>
 <tr>
 <td>Authentication information</td>
-<td>Your Featherless API key</td>
-<td>Saved on your device, encrypted; sent to Featherless with each request</td>
+<td>Your OpenRouter API key</td>
+<td>Saved on your device, encrypted; sent to OpenRouter with each request</td>
 </tr>
 <tr>
 <td>Health information</td>
 <td>Whatever a person writes in the conversation about their health or situation, and the AI's read of how receptive they seem</td>
-<td>Part of the conversation text: sent to Featherless on Generate and Detect; the read is shown in the panel and not saved</td>
+<td>Part of the conversation text: sent to OpenRouter on Generate and Detect; the read is shown in the panel and not saved</td>
 </tr>
 <tr>
 <td>Web history</td>
-<td>The web address of each Messenger conversation you use</td>
+<td>The web address of each conversation you use</td>
 <td>Saved on your device as a label for its records; copied only if you click Copy debug info; never sent anywhere</td>
 </tr>
 <tr>
@@ -384,8 +411,8 @@ include anything a person writes, such as details about health or beliefs.</p>
 <h2>How information is used</h2>
 <p>This extension's handling of user data adheres to the Chrome Web Store User Data Policy, including its
 Limited Use requirements. Information is used only to provide the extension's single purpose: helping
-you with your Messenger conversations, by drafting the reply suggestions you ask for and answering your
-questions about the company's products. It is sent to Featherless AI (and, for product codes only, to the
+you with your Messenger and Instagram conversations, by drafting the reply suggestions you ask for and answering your
+questions about the company's products. It is sent to OpenRouter (and, for product codes only, to the
 catalog address in sections 2 and 3) only because that is necessary for that purpose. It is not sold or
 transferred to advertising platforms, data brokers or other information resellers; it is not used for
 personalised or interest-based advertising or to determine creditworthiness or for lending; and the
@@ -402,14 +429,14 @@ abuse.</p>
   time its side panel opens.</li>
 <li>To change or remove your API key, personal note or talking points, edit or clear the field and click
   its Save button. Chrome may keep deleted values in its files for a while before overwriting them,
-  and version 0.2.1 or earlier stored the API key unencrypted, so revoke a key in your Featherless
+  and version 0.2.1 or earlier stored the API key unencrypted, so revoke a key in your OpenRouter
   account if you want to be sure an old copy can't be used.</li>
 <li>Removing the extension from Chrome normally also deletes everything in the table above; this is
   done by the browser, not by the extension. It does not affect information already sent to
-  Featherless or the product catalog address, text you copied to your clipboard, or text left in
-  Messenger's message box.</li>
+  OpenRouter or the product catalog address, text you copied to your clipboard, or text left in
+  a chat's message box.</li>
 <li>The publisher holds no copy of your information, so there is nothing for the publisher to delete.
-  For anything held by Featherless, contact Featherless.</li>
+  For anything held by OpenRouter, contact OpenRouter.</li>
 </ul>
 <h2>Your rights</h2>
 <p>Everything the extension stores is on your device, where you can see, correct and delete it as
@@ -419,7 +446,7 @@ your national data protection authority.</p>
 <h2>The people you talk to</h2>
 <p>The extension processes whatever appears in the conversations you choose, including messages written by
 other people, who have not agreed to anything and cannot see this policy. That can include sensitive
-details they write about themselves (for example about health or beliefs); these are sent to Featherless
+details they write about themselves (for example about health or beliefs); these are sent to OpenRouter
 as part of the conversation and are not removed by the redaction. You decide which conversations to use
 the extension on. Use it only where you are comfortable sending that conversation to an AI service, make
 sure that is appropriate under the law and the terms of the services involved, and avoid typing sensitive
@@ -428,20 +455,20 @@ conversations with anyone under 18.</p>
 <h2>Who the extension is for</h2>
 <p>The extension is intended for adults. It is not directed at children.</p>
 <h2>Security</h2>
-<p>Requests to Featherless, the product catalog addresses, the Oriflame pages and the knowledge-base copy
+<p>Requests to OpenRouter, the product catalog addresses, the Oriflame pages and the knowledge-base copy
 use HTTPS. Content downloaded for Ask is treated as text and is never run as code. Your API key is stored encrypted,
 so it does not appear in readable form in the extension's settings storage. The encryption key is kept in
 the same Chrome profile, though, so someone with a full copy of your browser profile (or a backup of it),
 or malicious software running on your computer, could still recover your API key. Your notes are kept in Chrome's extension storage without extra encryption, so anyone with access to your
 computer and browser profile may be able to read them. If you think your API key has been exposed,
-revoke it and create a new one in your Featherless account; that is the only way to make an old copy
+revoke it and create a new one in your OpenRouter account; that is the only way to make an old copy
 useless.</p>
 <h2>Changes to this policy</h2>
 <p>If the extension's handling of information changes, this page will be updated and the "Last updated"
 date above will change. Changes that send information to a new destination will also be described on
 the extension's Chrome Web Store listing, and the panel will show its notice again for you to confirm.</p>
 <h2>Trademarks</h2>
-<p>Facebook and Messenger are trademarks of Meta Platforms, Inc. This extension is unofficial and is not
+<p>Facebook, Messenger and Instagram are trademarks of Meta Platforms, Inc. This extension is unofficial and is not
 made or endorsed by Meta.</p>
 <h2>Contact</h2>
 <p>Questions about this policy: ismail.moulouad@gmail.com</p>
